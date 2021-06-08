@@ -1,0 +1,8 @@
+Package       Version
+------------- -------
+autopep8      1.5.7  
+pip           20.0.2 
+pkg-resources 0.0.0  
+pycodestyle   2.7.0  
+setuptools    44.0.0 
+toml          0.10.2 
