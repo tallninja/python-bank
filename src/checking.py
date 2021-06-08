@@ -55,6 +55,8 @@ class Checking(Account):
                     float(amount)
                     account['balance'] += amount
                     self.save_account()
+                    print("Funds deposited successfully !")
+                    self.start()
                 else:
                     raise Exception("Account is closed !")
             else:
@@ -79,6 +81,8 @@ class Checking(Account):
                     if account["balance"] - amount >= 0:
                         account['balance'] -= amount
                         self.save_account()
+                        print(f"Successfully withdrawed {amount}!")
+                        self.start()
                     else:
                         raise Exception("Insufficient Funds !")
                 else:
@@ -97,6 +101,8 @@ class Checking(Account):
                 if account.get("status") == "OPEN":
                     account["status"] = "CLOSED"
                     self.save_account()
+                    print("Successfully closed the account !")
+                    self.start()
                 else:
                     raise Exception("The account is already closed !")
             else:
@@ -118,23 +124,8 @@ class Checking(Account):
 
 
 def main():
-    # account = Checking("Ernest", "Wambua", "0719286396",
-    #                    "ernestwambua2@gmail.com")
-    # account.create_account()
-    # print(account.to_json())
-    # account.deposit(100)
-    # print(account)
-    # account.withdraw(50)
-    # print(account)
-    # try:
-    #     account.withdraw(100)
-    # except Exception as e:
-    #     print(f"Overdrawal: {e}")
-
     account = Checking()
     account.start()
-    # account.create_account()
-    # account.save_account()
 
 
 if __name__ == "__main__":

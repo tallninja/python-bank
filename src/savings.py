@@ -58,6 +58,8 @@ class Savings(Account):
                     if amount >= account["minimum_balance"]:
                         account["balance"] += amount
                         self.save_account()
+                        print("Funds deposited successfully !")
+                        self.start()
                     else:
                         raise Exception(
                             f"Cannot deposit funds less than {account['minimum_balance']} !")
@@ -87,6 +89,8 @@ class Savings(Account):
                             account["balance"] -= amount
                             account["max_num_of_withdrawals"] -= 1
                             self.save_account()
+                            print(f"Successfully withdrawed {amount}!")
+                            self.start()
                         else:
                             raise Exception("Insufficient funds !")
                     else:
@@ -108,6 +112,8 @@ class Savings(Account):
                 if account.get("status") == "OPEN":
                     account["status"] = "CLOSED"
                     self.save_account()
+                    print("Successfully closed the account !")
+                    self.start()
                 else:
                     raise Exception("The account is already closed !")
             else:

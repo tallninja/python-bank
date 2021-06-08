@@ -27,6 +27,8 @@ class Account(Bank):
         self.status = "OPEN"
         self.create_account()
         self.save_account()
+        print("Successfully created the account !")
+        self.start()
 
     def create_account(self):
         pass

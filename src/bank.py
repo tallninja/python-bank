@@ -12,7 +12,9 @@ class Bank:
 
     def start(self):
         os.chdir(BASE_PATH)
-        if not os.listdir().index("database"):
+        try:
+            os.listdir().index("database")
+        except:
             os.mkdir("database")
 
         print(f'''
