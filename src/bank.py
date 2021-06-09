@@ -1,6 +1,5 @@
 import os
 import sys
-# from account import Account
 
 BASE_PATH = os.path.dirname(os.path.abspath(__file__))
 
