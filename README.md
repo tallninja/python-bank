@@ -1,4 +1,4 @@
-# BANK SUMULATION (PYTHON)
+# BANK SIMULATION (PYTHON)
 
 ## Installation
 
